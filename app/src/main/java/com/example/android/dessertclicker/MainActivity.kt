@@ -27,10 +27,14 @@ import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import com.example.android.dessertclicker.databinding.ActivityMainBinding
 
+
 class MainActivity : AppCompatActivity() {
 
     private var revenue = 0
     private var dessertsSold = 0
+    companion object {
+        const val TAG = "MainActivity"
+    }
 
     // Contains all the views
     private lateinit var binding: ActivityMainBinding
@@ -64,7 +68,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("MainActivity","onCreate Called")
+        Log.d(TAG,"onCreate Called")
         // Use Data Binding to get reference to the views
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
